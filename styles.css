@@ -1,0 +1,187 @@
+body{
+    display: flex; 
+   justify-content: center;
+   align-items: center;
+   background-color: #f1f9ec;
+
+}
+
+.calcBody{
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 1;
+    margin-top: 10%;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding:4%;
+    border: 5px solid black;
+    background-color: #646968;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    
+}
+
+.screen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    border: 3px solid black;
+    flex: 1;
+    padding:20%;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4);
+    
+   
+
+}
+
+.divOne{
+   
+   
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+
+
+}
+
+.divTwo{
+    
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 8%;
+        
+}
+
+.sizeOne{
+
+    height: 40%;
+    width: 50%;
+    padding: 5%;
+    margin-top: 5%;
+    margin-bottom:10%;
+   
+
+}
+
+.sizeTwo{
+
+    height: 20%;
+    width:25%;
+   padding: 4%;
+   
+   
+    
+ 
+    
+
+   
+}
+
+#seven{
+
+    margin-right: 1%;
+    margin-top:4%;
+}
+
+#four{
+    margin-right:1%;
+    margin-top:4%;
+}
+#one{
+    margin-right:1%;
+    margin-top:4%;
+}
+#zero{
+    margin-right: 1%;
+    margin-top:4%;
+}
+
+#eight{
+
+    margin-right: 1%;
+    margin-top:4%;
+}
+
+#five{
+    margin-right:1%;
+    margin-top:4%;
+}
+#two{
+    margin-right:1%;
+    margin-top:4%;
+}
+#dot{
+    margin-right: 1%;
+    margin-top:4%;
+}
+
+#nine{
+
+    margin-right: 1%;
+    margin-top:4%;
+}
+
+#six{
+    margin-right:1%;
+    margin-top:4%;
+}
+#three{
+    margin-right:1%;
+    margin-top:4%;
+}
+#equal{
+    margin-right: 1%;
+    margin-top:4%;
+}
+
+#add{
+
+    
+    margin-top:4%;
+}
+
+#subtract{
+    
+    margin-top:4%;
+}
+#multiply{
+    
+    margin-top:4%;
+}
+#divide{
+   
+    margin-top:4%;
+}
+
+button{
+
+    background-color: wheat;
+    font-family: garamond, serif;
+    font-size: larger;
+    border-radius: 5px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+button:hover{
+
+    cursor:pointer
+}
+button:active{
+
+    box-shadow: none;
+    transform: translateY(2px);
+}
