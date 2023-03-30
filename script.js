@@ -26,6 +26,7 @@ let textBottom = document.querySelector('#screenTextBottom');
 
 //Global Parameters
 let x = 0;
+let y = 0;
 let operation = 0;
 
 
@@ -59,38 +60,40 @@ function operate(operation, x, y){
         
         let answer = sum(x,y);
         textTop.innerHTML = answer;
-        x = storeX(textTop.innerHTML);
         clearBottom();
     }
     else if(operation == 4){
 
         let answer = subtractDo(x,y);
         textTop.innerHTML = answer;
-        x = storeX(textTop.innerHTML);
         clearBottom();
     }
     else if(operation == 2){
        
         let answer = multiplyDo(x,y);
         textTop.innerHTML = answer;
-        x = storeX(textTop.innerHTML);
         clearBottom();
     }
     else if(operation == 3){
         
+        if(y === 0){
+            textTop.innerHTML = 'Go ask Isaac Newton';
+            textBottom.innerHTML = 'Go proof this yourself';
+        }
         let answer = divideDo(x,y);
         textTop.innerHTML = answer;
-        x = storeX(textTop.innerHTML);
         clearBottom();
     }
 
-    else if(operation == 0){
+    else{
 
         textBottom.innerHTML = textBottom.innerHTML;
         textTop.innerHTML = textTop.innerHTML;
     }
 
     operation = 0;
+    y = 0;
+    x = 0;
 }
 
 function bottomDisplay(x){
@@ -117,6 +120,8 @@ function allClear(){
 
     textBottom.innerHTML = '0';
     textTop.innerHTML = '0';
+    operation = 0;
+    x = 0;
 
 }
 
@@ -221,45 +226,83 @@ clear.addEventListener('click', () =>{
 // operations
 
 add.addEventListener('click', () =>{
-    
+    if(parseFloat(textTop.innerHTML) > 0){
+        operation = 1;
+        x = storeX(textTop.innerHTML);
+        topDisplay(textTop.innerHTML.toString() + '+');
+        clearBottom();
+    }
+    else{
     operation = 1;
     x = storeX(textBottom.innerHTML);
     bottomDisplay('+');
     topDisplay(textBottom.innerHTML);
     clearBottom();
+    }
 });
 
 multiply.addEventListener('click', () =>{
-    
+    if(parseFloat(textTop.innerHTML) > 0){
+        operation = 2;
+        x = storeX(textTop.innerHTML);
+        topDisplay(textTop.innerHTML.toString() + '*');
+        clearBottom();
+    }
+    else{
     operation = 2;
     x = storeX(textBottom.innerHTML);
     bottomDisplay('*');
     topDisplay(textBottom.innerHTML);
     clearBottom();
+    }
 });
 
 divide.addEventListener('click', () =>{
-    
+    if(parseFloat(textTop.innerHTML) > 0){
+        operation = 3;
+        x = storeX(textTop.innerHTML);
+        topDisplay(textTop.innerHTML.toString() + '/');
+        clearBottom();
+    }
+    else{
     operation = 3;
     x = storeX(textBottom.innerHTML);
     bottomDisplay('/');
     topDisplay(textBottom.innerHTML);
     clearBottom();
+    }
 });
 subtract.addEventListener('click', () =>{
     
+    
+    
+    
+    
+    if(parseFloat(textTop.innerHTML) > 0){
+        operation = 4;
+        x = storeX(textTop.innerHTML);
+        topDisplay(textTop.innerHTML.toString() + '-');
+        clearBottom();
+    }
+    else{
     operation = 4;
     x = storeX(textBottom.innerHTML);
     bottomDisplay('-');
     topDisplay(textBottom.innerHTML);
     clearBottom();
+    }
 });
 
 equals.addEventListener('click', () =>{
     
-    let y = parseFloat(textBottom.innerHTML);
+    if(operation == 0){
+        textBottom.innerHTML = '0';
+        textTop.innerHTML = '0';
+    }
+    else{
+    y = parseFloat(textBottom.innerHTML);
     operate(operation, x, y);
-    
+    }
 });
 
 
